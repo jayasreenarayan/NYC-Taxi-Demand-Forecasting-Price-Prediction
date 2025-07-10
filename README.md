@@ -1,39 +1,90 @@
-# NYC-Taxi-Demand-Forecasting-Price-Prediction
+🚕 NYC Taxi Fare Prediction
+Project Title: NYC Taxi Demand Forecasting & Price Prediction
+Objective: Build a robust model to predict NYC taxi fares based on trip data to improve transparency, optimize pricing, and support planning.
 
-Project Proposal: Price Prediction for NYC Taxi Rides Using Trip Data 
+📌 Overview
+Accurate fare prediction is crucial for passengers, drivers, and ride-hailing platforms in New York City. Taxi fare depends on multiple factors like trip distance, time of day, pickup/dropoff location, and surcharges.
 
-1. The Problem
+This project leverages historical Yellow Taxi trip data from the NYC Taxi and Limousine Commission (TLC) to analyze ride patterns and build a predictive model using regression techniques. The goal is to deliver a reliable fare estimation tool that enhances rider trust, assists drivers in route planning, and supports data-driven decision-making for taxi operators and urban planners.
 
-Accurately predicting taxi fares is essential for drivers, passengers, and operators to optimize pricing and improve transparency. In New York City, taxi fares depend on factors like distance, time of day, and duration. This project aims to build a predictive model for NYC taxi fares using historical trip data from the NYC Taxi and Limousine Commission (TLC). By analyzing ride characteristics and applying regression and time-series analysis, we can provide insights into fare determination and seasonal trends.
+📂 Data Source
+We use publicly available NYC Yellow Taxi trip data provided by the NYC Taxi & Limousine Commission (TLC).
 
-3. Data Collection
+Key Features:
+trip_distance: Distance traveled (miles)
 
-We will use publicly available NYC Yellow Taxi trip data, including:
+pickup_datetime & dropoff_datetime: Enables extraction of:
 
-•	Trip Distance: A key determinant of fare.
+Trip duration
 
-•	Pickup/Dropoff Datetime: Used to extract features like trip duration, time of day, and day of the week.
+Day of the week
 
-•	Location IDs: Pickup and drop-off zones to capture geographic pricing variations.
+Time of day
 
-•	Fare Amount: The target variable for prediction.
+PULocationID, DOLocationID: Geographic zones
 
-•	Additional Charges: Extras like tolls and surcharges to refine the model.
+fare_amount: Target variable
 
-This dataset enables us to analyze how trip attributes influence fares without requiring external data.
+extra, mta_tax, tip_amount, tolls_amount, total_amount: Additive fare components
 
-3. Analytical Techniques
-   
-•	Descriptive Analysis:
-o	Explore relationships between fare amounts and trip characteristics using summary statistics and visualizations (e.g., scatter plots, bar charts).
+🔍 Exploratory Data Analysis (EDA)
+We begin with descriptive analysis to understand how fares relate to trip features:
 
-o	Identify how fares vary with trip distance, time of day, and geographic zones.
+Distance vs Fare Scatterplots
 
-•	Regression Analysis:
-o	Develop a multiple linear regression model using predictors like distance, time of day, and trip duration.
+Temporal Trends (peak hour, weekday/weekend analysis)
 
-o	Evaluate performance metrics to measure prediction accuracy.
+Fare distributions by pickup/dropoff zones
 
-5. Impact and Goal
-   
-A successful model will predict taxi fares based on trip details before a ride starts, providing greater transparency to customers and helping taxi operators adjust pricing strategies. Insights from this project can guide city planners and improve user satisfaction through accurate fare estimates.
+Outlier handling and data cleaning
+
+🧠 Modeling Approach
+💡 Regression Model
+Multiple Linear Regression:
+
+Predictors: Trip distance, trip duration, time of day, pickup/dropoff zones
+
+Encoded categorical variables for location IDs and temporal bins
+
+Advanced Models (optional):
+
+Random Forest
+
+XGBoost
+
+Gradient Boosting
+
+🧪 Evaluation Metrics:
+RMSE (Root Mean Square Error)
+
+MAE (Mean Absolute Error)
+
+R² Score
+
+📈 Project Outcomes
+🚖 Accurate Fare Predictions: Estimate fare before a ride starts using trip characteristics.
+
+💰 Pricing Transparency: Improve user trust through fair pricing and better communication.
+
+📊 Operational Insights: Identify patterns by location and time to support driver incentives or pricing strategies.
+
+🏙️ Urban Planning: Understand travel behaviors to support city planning and infrastructure development.
+
+🛠️ Tech Stack
+Language: Python
+
+Libraries: pandas, numpy, matplotlib, seaborn, scikit-learn, XGBoost
+
+Environment: Jupyter Notebooks / Google Colab
+
+Visualization Tools: Plotly, seaborn, matplotlib
+
+📅 Next Steps
+Include weather and traffic data for improved predictions
+
+Expand to include Green/For-Hire taxis and ride-share apps
+
+Deploy model via API for real-time fare predictions
+
+
+pip install -r requirements.txt
